@@ -34,3 +34,60 @@
 
 ## 各个请求的详细信息 (所有请求前缀均为 `/server`)
 
+### 帐号相关部分（请求前缀为 `/account`）
+
+#### `/login`
+
+- 功能说明：登录
+- 请求方法：POST
+- 请求体：
+```js
+{
+    username: String,
+    password: String,
+}
+```
+- 响应体：无
+- 其他说明：
+  - 如果登录成功，返回 200
+  - 如果密码错误，返回 403
+  - 如果帐号不存在，返回 404
+  - 格式限制：
+```js
+{
+    USERNAME: /^\w{5,20}$/,
+    PASSWORD: /^\w{10,}$/,
+};
+```
+
+#### `/getVerificationCode`
+
+- 功能说明：获取验证码
+- 请求方法：GET
+- 请求体：
+```js
+{
+    email: String,  // 接收验证码的邮箱
+}
+```
+- 响应体：无
+- 其他说明：无
+
+#### `/signUp`
+
+- 功能说明：注册
+- 请求方法：POST
+- 请求体：
+```js
+{
+    username: String,           // 用户名
+    password: String,           // 密码
+    name: String,               // 姓名
+    age: Number,                // 年龄
+    address: String,            // 家庭住址
+    email: String,              // 邮箱
+    verificationCode: String    // 验证码
+}
+```
+- 响应体：无
+- 其他说明：验证码错误返回 403，用户名重复返回 409
