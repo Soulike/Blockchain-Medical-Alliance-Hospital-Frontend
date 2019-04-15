@@ -1,0 +1,19 @@
+@import "../../Style.module";
+
+.StagePoint {
+    height: 2*$RADIUS;
+    display: inline-flex;
+
+    .point {
+        width: 2*$RADIUS;
+        height: 2*$RADIUS;
+        border: $RADIUS solid #B0B7C1;
+        border-radius: $RADIUS;
+        z-index: 1;
+
+
+        &.reached {
+            border-color: #17C0EF;
+        }
+    }
+}

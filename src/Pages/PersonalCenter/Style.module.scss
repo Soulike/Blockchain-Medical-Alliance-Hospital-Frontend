@@ -1,0 +1,85 @@
+.PersonalCenter {
+    width: (1433rem/24);
+    margin: 0 auto;
+    padding: (70rem/24) 0;
+
+    .contentWrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .leftPart {
+            .certificateWrapper {
+                height: (831rem/24);
+                width: (640rem/24);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .certificate {
+                    width: 98%;
+                    height: 98%;
+                    background-repeat: no-repeat !important;
+                    background-size: contain !important;
+                    background-position: center !important;
+                }
+            }
+        }
+
+        .rightPart {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .logoWrapper {
+                width: (541rem/24);
+                height: (404rem/24);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: #D2D0D0 (10rem/24) (10rem/24) (30rem/24);
+
+                .logo {
+                    width: (390rem/24);
+                    height: (280rem/24);
+                    background-repeat: no-repeat !important;
+                    background-size: contain !important;
+                    background-position: center !important;
+                }
+            }
+
+            .companyInfoWrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: (388rem/4*3/24);
+
+                .infoWrapper {
+                    font-size: (28rem/24);
+                    padding: (14rem/24) (52rem/24);
+                    vertical-align: middle;
+                    box-shadow: #D2D0D0 (5rem/24) (0rem/24) (20rem/24);
+
+                    .label {
+                        display: inline-block;
+                        width: 5em;
+                    }
+
+                    .info {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .modifyButtonWrapper {
+        text-align: center;
+        margin-top: (32rem/24);
+
+        .modifyButton {
+            width: (180rem/24);
+            height: (60rem/24);
+            font-size: (20rem/24);
+        }
+    }
+}

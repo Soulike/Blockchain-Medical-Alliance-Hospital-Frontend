@@ -1,0 +1,13 @@
+.StageTextIndicator {
+    width: 100%;
+    height: (70rem/24);
+    font-size: (36rem/24);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #BBB;
+
+    .active {
+        color: #005BE7;
+    }
+}

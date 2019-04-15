@@ -1,0 +1,25 @@
+@import "../../Style.module";
+
+.StagePoint {
+    height: 2*$RADIUS;
+    display: flex;
+    align-items: center;
+
+    .point {
+        width: 2*$RADIUS;
+        height: 2*$RADIUS;
+        border: $RADIUS solid #B0B7C1;
+        border-radius: $RADIUS;
+        z-index: 0;
+
+
+        &.reached {
+            border-color: #17C0EF;
+        }
+    }
+
+    .label {
+        margin-left: (28rem/24);
+        font-size: (42rem/24);
+    }
+}

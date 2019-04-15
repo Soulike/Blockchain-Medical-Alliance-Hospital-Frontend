@@ -1,0 +1,60 @@
+@import "../../../../Constant/ROOT";
+
+.Header {
+    width: 100%;
+    height: (80rem/24);
+    background-color: #FFF;
+    color: #101010;
+    font-size: (28rem/24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 (160rem/24);
+
+    a {
+        color: #101010;
+        text-decoration: none;
+
+        &:hover {
+            color: #17C0EF;
+            text-decoration: none;
+        }
+    }
+
+    .logoWrapper {
+
+        .logo {
+            width: (56rem/24);
+        }
+    }
+
+    .rightWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: (743rem/24);
+
+
+        .navWrapper {
+            width: (516rem/24);
+            display: flex;
+            justify-content: space-between;
+
+            .navItem {
+
+            }
+        }
+
+        .authControllerWrapper {
+            width: (140rem/24);
+            text-align: center;
+
+            .link {
+
+            }
+        }
+
+        .active {
+            color: #17C0EF;
+        }
+    }
+}

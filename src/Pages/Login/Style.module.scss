@@ -1,0 +1,61 @@
+.Login {
+    width: (470rem/24);
+
+    .title {
+        font-size: (48rem/24);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .loginForm {
+        margin-top: (59rem/24);
+
+        .inputWrapper {
+
+            .input {
+                font-size: (28rem/24);
+                margin-bottom: (40rem/24);
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .linkWrapper {
+            margin-top: (17rem/24);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: (28rem/24);
+
+
+            a {
+                color: #17C0EF;
+            }
+        }
+
+        .buttonWrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: (49rem/24);
+
+            .submitButton {
+                color: #FFF;
+                width: (254rem/24);
+                height: (80rem/24);
+                border-radius: (40rem/24);
+                font-size: (36rem/24);
+                background-color: #17C0EF;
+
+                &:hover {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

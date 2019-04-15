@@ -1,0 +1,45 @@
+.AccountPageCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: (90rem/24) (285rem/24);
+
+    .background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 0;
+        background: url("../../Static/Account/background.png") no-repeat center;
+        background-size: cover;
+    }
+
+    .contentWrapper {
+        z-index: 1;
+        border: (1rem/24) solid #BBB;
+        width: (1350rem/24);
+        height: (810rem/24);
+        padding: (30rem/24) (45rem/24);
+        display: flex;
+        justify-content: space-between;
+
+        .imageWrapper {
+            width: (570rem/24);
+
+            .image {
+                margin-top: (160rem/24);
+                height: (590rem/24);
+                background: url("../../Static/Account/sideImage.png") no-repeat center;
+                background-size: contain;
+            }
+        }
+
+        .childrenWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: (690rem/24);
+        }
+    }
+}

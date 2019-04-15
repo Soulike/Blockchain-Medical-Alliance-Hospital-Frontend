@@ -1,0 +1,11 @@
+@import "./Constant/FONT";
+
+html {
+    font-size: 16px;
+    font-family: $SANS_SERIF;
+}
+
+html, body, #root {
+    height: 100%;
+    color: #101010;
+}

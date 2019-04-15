@@ -1,0 +1,32 @@
+.Selector {
+    font-size: (28rem/24);
+    width: 100%;
+
+    .series {
+        margin-bottom: (38rem/24);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .caption {
+            display: inline-block;
+            font-weight: bold;
+            margin-right: (122rem/24);
+        }
+
+        .itemWrapper {
+            display: inline-block;
+
+            .item {
+                display: inline-block;
+                width: (192rem/24);
+                cursor: pointer;
+
+                &.active, &:hover {
+                    color: #17C0EF;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../../../Constant/ROOT";
+
+.Footer {
+    height: $FOOTER_HEIGHT;
+    background-color: #A5C4D9;
+    color: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .infoWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: (480rem/24);
+        font-size: (20rem/24);
+
+        .info {
+            line-height: (50rem/24);
+        }
+    }
+}
