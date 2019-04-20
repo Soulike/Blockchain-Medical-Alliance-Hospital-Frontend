@@ -5,9 +5,9 @@ import StageTextIndicator from '../../Components/StageTextIndicator';
 import {DIRECT_PAYMENT_STAGE_ID, DIRECT_PAYMENT_STAGE_ID_TO_TEXT} from '../../Constant';
 import PropTypes from 'prop-types';
 import HospitalConfirmPayableDeclinedView from './Components/HospitalConfirmPayableDeclinedView';
-import InsuranceCompanyVerifyAndPayDeclinedView from './Components/InsuranceCompanyVerifyAndPayDeclinedView';
-import InsuranceCompanyVerifyAndPayProcessor from './Components/InsuranceCompanyVerifyAndPayProcessor';
 import CompleteView from './Components/CompleteView';
+import HospitalConfirmPayable from './Components/HospitalConfirmPayable';
+import HospitalConfirmPayment from './Components/HospitalConfirmPayment';
 
 function DirectPaymentDetail(props)
 {
@@ -16,7 +16,6 @@ function DirectPaymentDetail(props)
     const {
         name,
         directPaymentStage,
-        insurancePurchasingInfoId,
         directPaymentInfoId,
     } = directPaymentInfo;
     return (
@@ -36,22 +35,21 @@ function DirectPaymentDetail(props)
                     {
                         switch (directPaymentStage)
                         {
-                            case DIRECT_PAYMENT_STAGE_ID.NORMAL.INSURANCE_COMPANY_VERIFY_AND_PAY:
-                            {
-                                return <InsuranceCompanyVerifyAndPayProcessor directPaymentInfoId={directPaymentInfoId}
-                                                                              insurancePurchasingInfoId={insurancePurchasingInfoId} />;
-                            }
                             case DIRECT_PAYMENT_STAGE_ID.NORMAL.COMPLETE:
                             {
                                 return <CompleteView />;
                             }
-                            case DIRECT_PAYMENT_STAGE_ID.DECLINE.INSURANCE_COMPANY_VERIFY_AND_PAY_DECLINED:
+                            case DIRECT_PAYMENT_STAGE_ID.NORMAL.HOSPITAL_CONFIRM_PAYABLE:
                             {
-                                return <InsuranceCompanyVerifyAndPayDeclinedView />;
+                                return <HospitalConfirmPayable />;
                             }
                             case DIRECT_PAYMENT_STAGE_ID.DECLINE.HOSPITAL_CONFIRM_PAYABLE_DECLINED:
                             {
                                 return <HospitalConfirmPayableDeclinedView />;
+                            }
+                            case DIRECT_PAYMENT_STAGE_ID.NORMAL.HOSPITAL_CONFIRM_PAYMENT:
+                            {
+                                return <HospitalConfirmPayment directPaymentInfoId={directPaymentInfoId} />;
                             }
                             default:
                             {

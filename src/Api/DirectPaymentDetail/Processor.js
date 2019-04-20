@@ -1,5 +1,5 @@
 import Function from '../../Function';
-import {GET_DIRECT_PAYMENT_INFO, SUBMIT_INSURANCE_COMPANY_VERIFY_AND_PAY_RESULT} from './ROUTE';
+import {GET_DIRECT_PAYMENT_INFO, HOSPITAL_CONFIRM_PAYMENT} from './ROUTE';
 import {STATUS_CODE} from '../../Constant';
 import message from 'antd/lib/message';
 import {Function as AuthProcessorFunction} from '../../Components/AuthProcessor';
@@ -63,20 +63,18 @@ export async function sendGetDirectPaymentInfoRequestAsync(directPaymentInfoId)
     }
 }
 
-export async function sendPostSubmitInsuranceCompanyVerifyAndPayResultRequestAsync(directPaymentInfoId, verifyResult)
+export async function sendPostHospitalConfirmPaymentRequestAsync(directPaymentInfoId)
 {
     try
     {
-        const {code} = await Function.postAsync(SUBMIT_INSURANCE_COMPANY_VERIFY_AND_PAY_RESULT, {
+        const {code} = await Function.postAsync(HOSPITAL_CONFIRM_PAYMENT, {
             directPaymentInfoId,
-            verifyResult,
         });
-
         switch (code)
         {
             case STATUS_CODE.OK:
             {
-                message.success('提交审核结果成功');
+                message.success('确认支付成功');
                 return true;
             }
             case STATUS_CODE.BAD_REQUEST:
@@ -92,7 +90,7 @@ export async function sendPostSubmitInsuranceCompanyVerifyAndPayResultRequestAsy
             }
             case STATUS_CODE.FORBIDDEN:
             {
-                message.error('提交审核结果操作被拒绝');
+                message.error('确认支付操作被拒绝');
                 return null;
             }
             case STATUS_CODE.NOT_FOUND:
@@ -112,7 +110,7 @@ export async function sendPostSubmitInsuranceCompanyVerifyAndPayResultRequestAsy
             }
             default:
             {
-                message.error('未知原因的提交审核结果失败');
+                message.error('未知原因的确认支付失败');
                 return null;
             }
         }

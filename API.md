@@ -208,3 +208,16 @@
 }
 ```
 - 其他说明：无
+
+#### `/hospitalConfirmPayment`
+
+- 功能说明：医院确认保险公司已支付直付金额
+- 请求方法：POST
+- 请求体：
+```js
+{
+    directPaymentInfoId: String,        // 直付信息 ID
+}
+```
+- 响应体：无
+- 其他说明：无

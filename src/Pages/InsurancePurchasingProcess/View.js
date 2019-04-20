@@ -1,7 +1,7 @@
 import React from 'react';
 import Style from './Style.module.scss';
 import PropTypes from 'prop-types';
-import {INSURANCE_PURCHASING_STAGE_ID, INSURANCE_PURCHASING_STAGE_ID_TO_TEXT} from '../../Constant';
+import {INSURANCE_PURCHASING_STAGE_ID_TO_TEXT} from '../../Constant';
 import Table from 'antd/lib/table';
 import ClickCopy from '../../Components/ClickCopy';
 import message from 'antd/lib/message';
@@ -9,7 +9,7 @@ import Tooltip from 'antd/lib/tooltip';
 
 function InsurancePurchasingProcess(props)
 {
-    const {insurancePurchasingInfoList, ageRange: [minAge, maxAge], stageId, onRowClick, insurancePurchasingInfoId: onlyInsurancePurchasingInfoId} = props;
+    const {insurancePurchasingInfoList, insurancePurchasingInfoId: onlyInsurancePurchasingInfoId} = props;
 
     const columns = [
         {
@@ -142,27 +142,6 @@ function InsurancePurchasingProcess(props)
                 responsiblePersonName,
             });
         }
-        else if (age >= minAge && age <= maxAge && (insurancePurchasingStage === stageId || stageId === INSURANCE_PURCHASING_STAGE_ID.DEVELOPMENT.ALL_STAGES))
-        {
-            dataSource.push({
-                key: insurancePurchasingInfoId,
-                insurancePurchasingInfoId,
-                name,
-                age,
-                isMale,
-                healthState,
-                publicKey,
-                insuranceType,
-                insurancePurchasingTime,
-                insurancePeriod,
-                insurancePrice,
-                insurancePurchasingStage,
-                responsiblePersonId,
-                responsiblePersonName,
-            });
-        }
-
-
     });
 
     return (
@@ -172,15 +151,6 @@ function InsurancePurchasingProcess(props)
                        columns={columns}
                        className={Style.processTable}
                        rowClassName={Style.row}
-                       onRow={record =>
-                       {
-                           return {
-                               onClick: () =>
-                               {
-                                   onRowClick(record.insurancePurchasingInfoId);
-                               },
-                           };
-                       }}
                        pagination={{
                            hideOnSinglePage: true,
                            pageSize: 10,
@@ -192,9 +162,6 @@ function InsurancePurchasingProcess(props)
 
 InsurancePurchasingProcess.propTypes = {
     insurancePurchasingInfoList: PropTypes.array.isRequired,
-    ageRange: PropTypes.array.isRequired,
-    stageId: PropTypes.oneOf([...Object.values(INSURANCE_PURCHASING_STAGE_ID.NORMAL), ...Object.values(INSURANCE_PURCHASING_STAGE_ID.DECLINE), ...Object.values(INSURANCE_PURCHASING_STAGE_ID.DEVELOPMENT)]).isRequired,
-    onRowClick: PropTypes.func.isRequired,
     insurancePurchasingInfoId: PropTypes.string,    // 如果这个 Prop 存在，那么只显示这一条信息且隐藏选择器
 };
 

@@ -3,6 +3,8 @@ import thunk from 'redux-thunk';
 // import 所有 Reducer
 import {Reducer as AuthProcessorReducer} from './Components/AuthProcessor';
 import {Reducer as ModalReducer} from './ComponentContainers/Modal';
+import {Reducer as DirectPaymentProcessReducer} from './Pages/DirectPaymentProcess';
+import {Reducer as DirectPaymentDetailReducer} from './Pages/DirectPaymentDetail';
 import {DIRECT_PAYMENT_STAGE_ID} from './Constant';
 
 // Store 中的初始值，根据开发需要进行改变
@@ -29,7 +31,7 @@ const initValues = {
             diagnosticResult: 'String',               // 诊断结果
             medicalDescription: 'String',             // 医疗说明
             insurancePurchasingInfoId: 'String',      // 对应保险投保信息的 ID
-            directPaymentStage: DIRECT_PAYMENT_STAGE_ID.NORMAL.COMPLETE,        // 枚举值，直付阶段*/
+            directPaymentStage: DIRECT_PAYMENT_STAGE_ID.NORMAL.HOSPITAL_CONFIRM_PAYMENT,        // 枚举值，直付阶段*/
         },
     },
 };
@@ -45,6 +47,8 @@ const storeEnhancers = compose(
 const Reducer = combineReducers({
     AuthProcessor: AuthProcessorReducer,
     Modal: ModalReducer,
+    DirectPaymentProcess: DirectPaymentProcessReducer,
+    DirectPaymentDetail: DirectPaymentDetailReducer,
 });
 
 export default createStore(Reducer, initValues, storeEnhancers);

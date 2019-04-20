@@ -12,7 +12,7 @@ class DirectPaymentDetailContainer extends React.Component
         const {directPaymentInfoId} = this.props.location.query;
         if (directPaymentInfoId === undefined)
         {
-            browserHistory.push(PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_DIRECT_PAYMENT_PROCESS]);
+            browserHistory.push(PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_DIRECT_PAYMENT_PROCESS]);
         }
         else
         {

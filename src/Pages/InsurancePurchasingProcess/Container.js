@@ -1,6 +1,5 @@
 import React from 'react';
 // import Function from '../../Function';
-import {connect} from 'react-redux';
 import Api from '../../Api';
 import InsurancePurchasingProcess from './View';
 import {browserHistory} from 'react-router';
@@ -70,22 +69,9 @@ class InsurancePurchasingProcessContainer extends React.Component
     render()
     {
         const {insurancePurchasingInfoList, insurancePurchasingInfoId} = this.state;
-        const {ageRange, stageId} = this.props;
         return <InsurancePurchasingProcess insurancePurchasingInfoList={insurancePurchasingInfoList}
-                                           ageRange={ageRange}
-                                           stageId={stageId}
-                                           onRowClick={() => null}
                                            insurancePurchasingInfoId={insurancePurchasingInfoId} />;
     }
 }
 
-const mapStateToProps = state =>
-{
-    const {InsurancePurchasingProcess: {ageRange, stageId}} = state;
-    return {
-        ageRange,
-        stageId,
-    };
-};
-
-export default connect(mapStateToProps)(InsurancePurchasingProcessContainer);
+export default InsurancePurchasingProcessContainer;
