@@ -6,6 +6,7 @@ import PersonalCenter from '../Pages/PersonalCenter';
 import DirectPaymentProcess from '../Pages/DirectPaymentProcess';
 import DirectPaymentDetail from '../Pages/DirectPaymentDetail';
 import InsurancePurchasingProcess from '../Pages/InsurancePurchasingProcess';
+import SubmitMedicalRecord from '../Pages/SubmitMedicalRecord';
 // 页面 View 从此导入
 
 // 页面对应的组件
@@ -20,4 +21,5 @@ export default {
     [REQUIRE_LOGIN_PAGE_ID.HOSPITAL_INSURANCE_DETAIL]: null,
     [NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_LOGIN]: Login,
     [NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SIGN_UP]: SignUp,
+    [REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SUBMIT_MEDICAL_RECORD]: SubmitMedicalRecord,
 };

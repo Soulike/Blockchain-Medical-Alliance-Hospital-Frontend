@@ -1,0 +1,58 @@
+.SubmitMedicalRecord {
+    background-color: #FFF;
+    margin: (82rem/24) auto;
+    width: (2000rem/24);
+    min-height: 25rem;
+
+    .content {
+        padding: (58rem/24) (121rem/24);
+
+        .title {
+            color: #17C0EF;
+            text-align: center;
+            font-size: (36rem/24);
+            font-weight: bold;
+        }
+
+        .formWrapper {
+            margin-top: (64rem/24);
+
+            .inputWrapper {
+                display: block;
+                width: 100%;
+                margin: (28rem/24) 0;
+
+                .label {
+                    font-size: (28rem/24);
+                    margin-bottom: (19rem/24);
+                    display: inline-block;
+                }
+
+                .input, .textarea {
+                    display: block;
+                    width: 100%;
+                    height: (57rem/24);
+                    font-size: (25rem/24);
+
+                    &, &:focus {
+                        background-color: #ECF0F7;
+                    }
+                }
+            }
+        }
+
+        .tableWrapper {
+
+            .medicalRecordContent {
+                resize: none;
+                width: 25rem;
+            }
+        }
+
+        .buttonWrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+    }
+}

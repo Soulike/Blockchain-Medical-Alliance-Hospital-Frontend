@@ -253,3 +253,28 @@
 }
 ```
 - 其他说明：无
+
+---
+
+### 提交病历部分（前缀为 `/submitMedicalRecord`）
+
+#### `/submitMedicalRecord`
+
+- 功能说明：提交病历
+- 请求方法：POST
+- 请求体：
+```js
+{
+    publicKey: String,      // 病人公钥
+    medicalRecordList: [    // 病历数组
+        {
+            treatmentDate: String,              // 接受治疗时间
+            treatmentHospital: String,          // 接受治疗所在医院
+            treatmentDoctor: String,            // 治疗的医生
+            medicalRecordContent: String,       // 病历内容
+        },
+    ]
+}
+```
+- 响应体：无
+- 其他说明：无
