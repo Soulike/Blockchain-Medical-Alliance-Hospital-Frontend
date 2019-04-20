@@ -21,7 +21,7 @@ class LoginContainer extends React.Component
         const {hasLoggedIn} = this.props;
         if (hasLoggedIn)
         {
-            browserHistory.push(PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_INSURANCE_LIST]);
+            browserHistory.push(PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_DIRECT_PAYMENT_PROCESS]);
         }
     }
 

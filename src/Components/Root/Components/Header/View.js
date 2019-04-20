@@ -10,14 +10,10 @@ class Header extends Component
     {
         const {
             hasLoggedIn,
-            insuranceUrl,
-            insurancePurchasingUrl,
             directPaymentUrl,
             personalCenterUrl,
             signUpUrl,
             loginUrl,
-            insuranceLinkIsActive,
-            insurancePurchasingLinkIsActive,
             directPaymentLinkIsActive,
             personalCenterLinkIsActive,
         } = this.props;
@@ -30,12 +26,12 @@ class Header extends Component
                 </div>
                 <div className={Style.rightWrapper}>
                     <nav className={Style.navWrapper}>
-                        <Link onlyActiveOnIndex={false}
+                        {/*<Link onlyActiveOnIndex={false}
                               className={`${Style.navItem} ${insuranceLinkIsActive ? Style.active : null}`}
                               to={insuranceUrl}>保险</Link>
                         <Link onlyActiveOnIndex={false}
                               className={`${Style.navItem} ${insurancePurchasingLinkIsActive ? Style.active : null}`}
-                              to={insurancePurchasingUrl}>投保</Link>
+                              to={insurancePurchasingUrl}>投保</Link>*/}
                         <Link onlyActiveOnIndex={false}
                               className={`${Style.navItem} ${directPaymentLinkIsActive ? Style.active : null}`}
                               to={directPaymentUrl}>直付</Link>

@@ -30,7 +30,7 @@ class CarouselContainer extends React.Component
                 {
                     shouldShowInsurancePublicationButton ?
                         <Link onlyActiveOnIndex={false}
-                              to={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_PUBLICATION]}>
+                              to={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_INSURANCE_PUBLICATION]}>
                             <Button htmlType={'button'} type={'primary'} className={Style.insurancePublicationButton}>
                                 发布保险
                             </Button>
