@@ -1,0 +1,27 @@
+.InsurancePurchasingProcess {
+    padding: (41rem/24) (58rem/24);
+    width: (2060rem/24);
+    margin: 0 auto;
+
+    .tableWrapper {
+        margin: (51rem/24) 0;
+
+        .processTable {
+            font-size: (28rem/24);
+            background-color: #FFF;
+
+            .row {
+                cursor: pointer;
+            }
+
+            .publicKey {
+                width: 6rem;
+                margin: 0 auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                cursor: pointer;
+                font-family: monospace;
+            }
+        }
+    }
+}

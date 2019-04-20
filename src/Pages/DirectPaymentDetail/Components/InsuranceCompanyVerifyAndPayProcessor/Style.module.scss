@@ -1,0 +1,45 @@
+.InsuranceCompanyVerifyAndPayProcessor {
+
+    .buttonsWrapper {
+        height: (181rem/24);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            font-size: (24rem/24);
+            background-color: #17C0EF;
+            border: (1rem/24) solid #BBB;
+            color: #EFF2FF;
+            width: (480rem/24);
+            height: (60rem/24);
+            border-radius: (20rem/24);
+        }
+    }
+
+    .selectorWrapper {
+        display: flex;
+        justify-content: center;
+        font-size: (28rem/24);
+        margin: (71rem/24) 0;
+
+        .selectorLabel {
+            width: (156rem/24);
+        }
+
+        .radioWrapper {
+            display: flex;
+            justify-content: space-between;
+            width: (175rem/24);
+        }
+    }
+
+    .confirmButtonWrapper {
+        text-align: center;
+
+        .confirmButton {
+
+        }
+    }
+}
