@@ -221,3 +221,35 @@
 ```
 - 响应体：无
 - 其他说明：无
+
+### `/hospitalConfirmPayable`
+
+- 功能说明：医院确认可直付
+- 请求方法：POST
+- 请求体：
+```js
+{
+    directPaymentInfoId: String,
+    payable: Number,                // 0或1
+}
+```
+- 响应体：无
+- 其他说明：无
+
+#### `/getElectronicInsurancePolicy`
+
+- 功能说明：获取电子保单
+- 请求方法：GET
+- 请求体：
+```js
+{
+    insurancePurchasingInfoId: String,
+}
+```
+- 响应体：
+```js
+{
+    electronicInsurancePolicy: String,  // 电子保单内容
+}
+```
+- 其他说明：无

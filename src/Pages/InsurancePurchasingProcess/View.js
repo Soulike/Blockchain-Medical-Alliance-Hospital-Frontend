@@ -96,12 +96,6 @@ function InsurancePurchasingProcess(props)
             render: text => INSURANCE_PURCHASING_STAGE_ID_TO_TEXT[text],
             sorter: (a, b) => a.insurancePurchasingStage - b.insurancePurchasingStage,
         },
-        {
-            title: '负责人',
-            dataIndex: 'responsiblePersonName',
-            key: 'responsiblePersonName',
-            align: 'center',
-        },
     ];
 
     const dataSource = [];
@@ -119,8 +113,6 @@ function InsurancePurchasingProcess(props)
             insurancePeriod,
             insurancePrice,
             insurancePurchasingStage,
-            responsiblePersonId,
-            responsiblePersonName,
         } = insurancePurchasingInfo;
 
         if (onlyInsurancePurchasingInfoId && insurancePurchasingInfoId === onlyInsurancePurchasingInfoId)
@@ -138,8 +130,6 @@ function InsurancePurchasingProcess(props)
                 insurancePeriod,
                 insurancePrice,
                 insurancePurchasingStage,
-                responsiblePersonId,
-                responsiblePersonName,
             });
         }
     });
