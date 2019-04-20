@@ -17,6 +17,7 @@ function DirectPaymentDetail(props)
         name,
         directPaymentStage,
         directPaymentInfoId,
+        insurancePurchasingInfoId,
     } = directPaymentInfo;
     return (
         <div className={Style.DirectPaymentDetail}>
@@ -41,7 +42,8 @@ function DirectPaymentDetail(props)
                             }
                             case DIRECT_PAYMENT_STAGE_ID.NORMAL.HOSPITAL_CONFIRM_PAYABLE:
                             {
-                                return <HospitalConfirmPayable />;
+                                return <HospitalConfirmPayable directPaymentInfoId={directPaymentInfoId}
+                                                               insurancePurchasingInfoId={insurancePurchasingInfoId} />;
                             }
                             case DIRECT_PAYMENT_STAGE_ID.DECLINE.HOSPITAL_CONFIRM_PAYABLE_DECLINED:
                             {
