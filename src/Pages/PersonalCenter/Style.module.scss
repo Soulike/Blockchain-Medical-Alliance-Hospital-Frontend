@@ -5,70 +5,32 @@
 
     .contentWrapper {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
 
-        .leftPart {
-            .certificateWrapper {
-                height: (831rem/24);
-                width: (640rem/24);
-                display: flex;
-                justify-content: center;
-                align-items: center;
 
-                .certificate {
-                    width: 98%;
-                    height: 98%;
-                    background-repeat: no-repeat !important;
-                    background-size: contain !important;
-                    background-position: center !important;
-                }
+        .logoWrapper {
+            width: (541rem/24);
+            height: (404rem/24);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .logo {
+                width: (390rem/24);
+                height: (280rem/24);
+                background-repeat: no-repeat !important;
+                background-size: contain !important;
+                background-position: center !important;
             }
         }
 
-        .rightPart {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            .logoWrapper {
-                width: (541rem/24);
-                height: (404rem/24);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: #D2D0D0 (10rem/24) (10rem/24) (30rem/24);
-
-                .logo {
-                    width: (390rem/24);
-                    height: (280rem/24);
-                    background-repeat: no-repeat !important;
-                    background-size: contain !important;
-                    background-position: center !important;
-                }
-            }
-
-            .companyInfoWrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: (388rem/4*3/24);
-
-                .infoWrapper {
-                    font-size: (28rem/24);
-                    padding: (14rem/24) (52rem/24);
-                    vertical-align: middle;
-                    box-shadow: #D2D0D0 (5rem/24) (0rem/24) (20rem/24);
-
-                    .label {
-                        display: inline-block;
-                        width: 5em;
-                    }
-
-                    .info {
-                        display: inline-block;
-                    }
-                }
-            }
+        .hospitalInfoWrapper {
+            width: 100%;
+            text-indent: 2em;
+            font-size: (28rem/24);
+            line-height: 2em;
+            text-align: justify;
         }
     }
 
