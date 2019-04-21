@@ -17,6 +17,7 @@ class DirectPaymentProcessContainer extends React.Component
             directPaymentInfoList: [],
             currentActiveDiagnosticResultInModal: '',
             currentActiveMedicalDescriptionInModal: '',
+            hasGotData: false,
         };
     }
 
@@ -58,6 +59,7 @@ class DirectPaymentProcessContainer extends React.Component
                     const {directPaymentInfoList} = directPaymentInfoListWrapper;
                     this.setState({
                         directPaymentInfoList,
+                        hasGotData: true,
                     });
                 }
             });
@@ -112,7 +114,7 @@ class DirectPaymentProcessContainer extends React.Component
 
     render()
     {
-        const {directPaymentInfoList, currentActiveDiagnosticResultInModal, currentActiveMedicalDescriptionInModal} = this.state;
+        const {directPaymentInfoList, currentActiveDiagnosticResultInModal, currentActiveMedicalDescriptionInModal, hasGotData} = this.state;
         const {ageRange, stageId} = this.props;
         return <DirectPaymentProcess ageRange={ageRange}
                                      stageId={stageId}
@@ -122,7 +124,8 @@ class DirectPaymentProcessContainer extends React.Component
                                      onMedicalDescriptionButtonClick={this.onMedicalDescriptionButtonClick}
                                      onInsurancePurchasingInfoButtonClick={this.onInsurancePurchasingInfoButtonClick}
                                      onDirectPaymentInfoClick={this.onDirectPaymentInfoClick}
-                                     onDiagnosticResultButtonClick={this.onDiagnosticResultButtonClick} />;
+                                     onDiagnosticResultButtonClick={this.onDiagnosticResultButtonClick}
+                                     hasGotData={hasGotData} />;
     }
 }
 

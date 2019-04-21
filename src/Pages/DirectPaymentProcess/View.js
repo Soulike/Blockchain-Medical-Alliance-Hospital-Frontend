@@ -2,8 +2,8 @@ import React from 'react';
 import Style from './Style.module.scss';
 import DirectPaymentProcessSelector from './Components/DirectPaymentProcessSelector';
 import {DIRECT_PAYMENT_STAGE_ID, DIRECT_PAYMENT_STAGE_ID_TO_TEXT} from '../../Constant';
-import DiagnosticResultModal from './Components/DiagnosticResultModal';
-import MedicalDescriptionModal from './Components/MedicalDescriptionModal';
+/*import DiagnosticResultModal from './Components/DiagnosticResultModal';
+import MedicalDescriptionModal from './Components/MedicalDescriptionModal';*/
 import PropTypes from 'prop-types';
 import ClickCopy from '../../Components/ClickCopy';
 import message from 'antd/lib/message';
@@ -18,12 +18,13 @@ function DirectPaymentProcess(props)
         ageRange: [minAge, maxAge],
         stageId,
         directPaymentInfoList,
-        currentActiveDiagnosticResultInModal,
-        currentActiveMedicalDescriptionInModal,
-        onDiagnosticResultButtonClick,
+        //currentActiveDiagnosticResultInModal,
+        //currentActiveMedicalDescriptionInModal,
+        //onDiagnosticResultButtonClick,
         onDirectPaymentInfoClick,
         onInsurancePurchasingInfoButtonClick,
-        onMedicalDescriptionButtonClick,
+        //onMedicalDescriptionButtonClick,
+        hasGotData,
     } = props;
 
     const columns = [
@@ -84,7 +85,7 @@ function DirectPaymentProcess(props)
             render: text => `${text} 元`,
             sorter: (a, b) => a.insurancePrice - b.insurancePrice,
         },
-        {
+        /*{
             title: '诊断结果',
             align: 'center',
             dataIndex: 'diagnosticResult',
@@ -101,7 +102,7 @@ function DirectPaymentProcess(props)
             render: text => <Button htmlType={'button'}
                                     type={'primary'}
                                     onClick={onMedicalDescriptionButtonClick(text)}>查看</Button>,
-        },
+        },*/
         {
             title: '保险信息',
             align: 'center',
@@ -166,7 +167,8 @@ function DirectPaymentProcess(props)
             <div className={Style.directPaymentProcessContent}>
                 <DirectPaymentProcessSelector />
                 <div className={Style.tableWrapper}>
-                    <Table dataSource={dataSource}
+                    <Table loading={!hasGotData}
+                           dataSource={dataSource}
                            columns={columns}
                            className={Style.processTable}
                            rowClassName={Style.row}
@@ -185,8 +187,8 @@ function DirectPaymentProcess(props)
                            }} />
                 </div>
             </div>
-            <DiagnosticResultModal diagnosticResult={currentActiveDiagnosticResultInModal} />
-            <MedicalDescriptionModal medicalDescription={currentActiveMedicalDescriptionInModal} />
+            {/*<DiagnosticResultModal diagnosticResult={currentActiveDiagnosticResultInModal} />
+            <MedicalDescriptionModal medicalDescription={currentActiveMedicalDescriptionInModal} />*/}
         </div>
     );
 }
@@ -201,6 +203,11 @@ DirectPaymentProcess.propTypes = {
     onDirectPaymentInfoClick: PropTypes.func.isRequired,
     onInsurancePurchasingInfoButtonClick: PropTypes.func.isRequired,
     onMedicalDescriptionButtonClick: PropTypes.func.isRequired,
+    hasGotData: PropTypes.bool,
+};
+
+DirectPaymentProcess.defaultProps = {
+    hasGotData: true,
 };
 
 export default DirectPaymentProcess;
