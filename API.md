@@ -270,7 +270,7 @@
         {
             treatmentDate: String,              // 接受治疗时间
             treatmentHospital: String,          // 接受治疗所在医院
-            treatmentDoctor: String,            // 治疗的医生
+            doctor: String,            // 治疗的医生
             medicalRecordContent: String,       // 病历内容
         },
     ]

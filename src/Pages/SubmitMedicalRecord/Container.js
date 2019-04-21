@@ -59,7 +59,7 @@ class SubmitMedicalRecordContainer extends React.Component
         const {medicalRecordList} = this.state;
         return e =>
         {
-            medicalRecordList[rowIndex].treatmentDoctor = e.target.value;
+            medicalRecordList[rowIndex].doctor = e.target.value;
             this.forceUpdate();
         };
     };
@@ -92,13 +92,13 @@ class SubmitMedicalRecordContainer extends React.Component
         {
             medicalRecordList.forEach((medicalRecord, i) =>
             {
-                const {treatmentHospital, treatmentDoctor, medicalRecordContent} = medicalRecord;
+                const {treatmentHospital, doctor, medicalRecordContent} = medicalRecord;
                 if (!REGEX.TREATMENT_HOSPITAL.test(treatmentHospital))
                 {
                     submittable = false;
                     message.warning(`第 ${i + 1} 行的接受治疗所在医院填写不正确`);
                 }
-                else if (!REGEX.TREATMENT_DOCTOR.test(treatmentDoctor))
+                else if (!REGEX.DOCTOR.test(doctor))
                 {
                     submittable = false;
                     message.warning(`第 ${i + 1} 行的治疗医生填写不正确`);
@@ -129,7 +129,7 @@ class SubmitMedicalRecordContainer extends React.Component
         medicalRecordList[medicalRecordList.length] = {
             treatmentDate: moment().format('YYYY-MM-DD'),
             treatmentHospital: '',
-            treatmentDoctor: '',
+            doctor: '',
             medicalRecordContent: '',
         };
         this.forceUpdate();

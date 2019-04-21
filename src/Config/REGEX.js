@@ -9,7 +9,7 @@ export const REGEX = {
 
     PUBLIC_KEY: /^[0-9a-z]{130}$/,
     TREATMENT_HOSPITAL: /^.+$/,
-    TREATMENT_DOCTOR: /^.+$/,
+    DOCTOR: /^.+$/,
     MEDICAL_RECORD_CONTENT: /^.+$/,
 };
 
