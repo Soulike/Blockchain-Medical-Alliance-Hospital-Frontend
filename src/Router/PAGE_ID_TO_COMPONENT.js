@@ -7,6 +7,7 @@ import DirectPaymentProcess from '../Pages/DirectPaymentProcess';
 import DirectPaymentDetail from '../Pages/DirectPaymentDetail';
 import InsurancePurchasingProcess from '../Pages/InsurancePurchasingProcess';
 import SubmitMedicalRecord from '../Pages/SubmitMedicalRecord';
+import QueryMedicalRecord from '../Pages/QueryMedicalRecord';
 // 页面 View 从此导入
 
 // 页面对应的组件
@@ -22,5 +23,5 @@ export default {
     [NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_LOGIN]: Login,
     [NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SIGN_UP]: SignUp,
     [REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SUBMIT_MEDICAL_RECORD]: SubmitMedicalRecord,
-    [REQUIRE_LOGIN_PAGE_ID.HOSPITAL_QUERY_MEDICAL_RECORD]: null,
+    [REQUIRE_LOGIN_PAGE_ID.HOSPITAL_QUERY_MEDICAL_RECORD]: QueryMedicalRecord,
 };
