@@ -74,7 +74,7 @@ Header.propTypes = {
     submitMedicalRecordUrl: PropTypes.string.isRequired,
     submitMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
     queryMedicalRecordUrl: PropTypes.string.isRequired,
-    queryMedicalRecordLinkIsActive: PropTypes.string.isRequired,
+    queryMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
     directPaymentLinkIsActive: PropTypes.bool.isRequired,
     personalCenterLinkIsActive: PropTypes.bool.isRequired,
 };
