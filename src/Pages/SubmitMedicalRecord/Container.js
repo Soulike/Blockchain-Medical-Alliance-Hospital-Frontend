@@ -54,7 +54,7 @@ class SubmitMedicalRecordContainer extends React.Component
         };
     };
 
-    onTreatmentDoctorInputChangeFactory = rowIndex =>
+    onDoctorInputChangeFactory = rowIndex =>
     {
         const {medicalRecordList} = this.state;
         return e =>
@@ -147,7 +147,7 @@ class SubmitMedicalRecordContainer extends React.Component
             medicalRecordList={medicalRecordList}
             onTreatmentDateChangeFactory={this.onTreatmentDateChangeFactory}
             onMedicalRecordContentInputChangeFactory={this.onMedicalRecordContentInputChangeFactory}
-            onTreatmentDoctorInputChangeFactory={this.onTreatmentDoctorInputChangeFactory}
+            onDoctorInputChangeFactory={this.onDoctorInputChangeFactory}
             onTreatmentHospitalInputChangeFactory={this.onTreatmentHospitalInputChangeFactory} />;
     }
 }

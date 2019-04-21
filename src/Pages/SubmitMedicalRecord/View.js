@@ -18,7 +18,7 @@ function SubmitMedicalRecord(props)
         medicalRecordList,
         onTreatmentDateChangeFactory,
         onTreatmentHospitalInputChangeFactory,
-        onTreatmentDoctorInputChangeFactory,
+        onDoctorInputChangeFactory,
         onMedicalRecordContentInputChangeFactory,
     } = props;
     const columns = [
@@ -44,12 +44,12 @@ function SubmitMedicalRecord(props)
         },
         {
             title: '治疗医生',
-            dataIndex: 'treatmentDoctor',
-            key: 'treatmentDoctor',
+            dataIndex: 'doctor',
+            key: 'doctor',
             render: (text, record, index) =>
             {
-                return <Input onChange={onTreatmentDoctorInputChangeFactory(index)}
-                              value={medicalRecordList[index].treatmentDoctor} />;
+                return <Input onChange={onDoctorInputChangeFactory(index)}
+                              value={medicalRecordList[index].doctor} />;
             },
         },
         {
@@ -99,7 +99,7 @@ SubmitMedicalRecord.propTypes = {
     medicalRecordList: PropTypes.array.isRequired,
     onTreatmentDateChangeFactory: PropTypes.func.isRequired,
     onTreatmentHospitalInputChangeFactory: PropTypes.func.isRequired,
-    onTreatmentDoctorInputChangeFactory: PropTypes.func.isRequired,
+    onDoctorInputChangeFactory: PropTypes.func.isRequired,
     onMedicalRecordContentInputChangeFactory: PropTypes.func.isRequired,
 };
 
