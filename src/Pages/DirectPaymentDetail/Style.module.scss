@@ -1,0 +1,28 @@
+.DirectPaymentDetail {
+    width: (1576rem/24);
+    margin: (150rem/24) auto;
+
+    .stageProgressIndicatorWrapper {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: (48rem/24);
+        text-align: center;
+        margin: (110rem/24);
+
+        .name {
+            font-weight: bold;
+        }
+    }
+
+    .stageTextIndicatorWrapper {
+
+    }
+
+    .stageProcessorWrapper {
+        margin-top: (75rem/24);
+    }
+}

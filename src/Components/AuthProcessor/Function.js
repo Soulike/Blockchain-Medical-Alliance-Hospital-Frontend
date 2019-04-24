@@ -8,7 +8,7 @@ export function requireLogin()
     const {AuthProcessor: {hasLoggedIn}} = Store.getState();
     if (!hasLoggedIn)
     {
-        browserHistory.push(PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_LOGIN]);
+        browserHistory.push(PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_LOGIN]);
     }
 }
 

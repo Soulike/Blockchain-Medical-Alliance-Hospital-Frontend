@@ -1,6 +1,7 @@
 {
   "name": "blockchain-medical-alliance-hospital-frontend",
   "version": "0.1.0",
+  "proxy": "http://140.143.38.123:8080",
   "private": true,
   "dependencies": {
     "antd": "^3.16.3",

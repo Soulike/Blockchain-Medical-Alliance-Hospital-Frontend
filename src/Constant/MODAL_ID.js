@@ -4,4 +4,5 @@ export default {
     ELECTRONIC_INSURANCE_POLICY_MODAL: 'electronicInsurancePolicyModal',
     MEDICAL_RECORD_MODAL: 'medicalRecordModal',
     PAY_CONFIRM_MODAL: 'payConfirmModal',
+    HOSPITAL_CONFIRM_PAYMENT_MODAL: 'hospitalConfirmPaymentModal',
 };

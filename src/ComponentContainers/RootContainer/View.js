@@ -5,35 +5,32 @@ import {connect} from 'react-redux';
 
 class RootContainer extends React.Component
 {
-    shouldInsuranceLinkBeActive = pageId =>
+    shouldSubmitMedicalRecordBeActive = pageId =>
     {
         return (
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_LIST ||
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_PUBLICATION ||
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_DETAIL
+            pageId === REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SUBMIT_MEDICAL_RECORD
         );
     };
 
-    shouldInsurancePurchasingLinkBeActive = pageId =>
+    shouldQueryMedicalRecordBeActive = pageId =>
     {
         return (
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_PURCHASING_PROCESS ||
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_PURCHASING_DETAIL
+            pageId === REQUIRE_LOGIN_PAGE_ID.HOSPITAL_QUERY_MEDICAL_RECORD
         );
     };
 
     shouldDirectPaymentLinkBeActive = pageId =>
     {
         return (
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_DIRECT_PAYMENT_DETAIL ||
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_DIRECT_PAYMENT_PROCESS
+            pageId === REQUIRE_LOGIN_PAGE_ID.HOSPITAL_DIRECT_PAYMENT_DETAIL ||
+            pageId === REQUIRE_LOGIN_PAGE_ID.HOSPITAL_DIRECT_PAYMENT_PROCESS
         );
     };
 
     shouldPersonalCenterLinkBeActive = pageId =>
     {
         return (
-            pageId === REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_PERSONAL_CENTER
+            pageId === REQUIRE_LOGIN_PAGE_ID.HOSPITAL_PERSONAL_CENTER
         );
     };
 
@@ -43,16 +40,16 @@ class RootContainer extends React.Component
         const currentPageId = ROUTE_TO_PAGE_ID[this.props.location.pathname];
         return (
             <Root hasLoggedIn={hasLoggedIn}
-                  insuranceUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_LIST]}
-                  directPaymentUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_DIRECT_PAYMENT_PROCESS]}
-                  insurancePurchasingUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_INSURANCE_PURCHASING_PROCESS]}
-                  loginUrl={PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_LOGIN]}
-                  signUpUrl={PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_SIGN_UP]}
-                  personalCenterUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.INSURANCE_COMPANY_PERSONAL_CENTER]}
-                  insuranceLinkIsActive={this.shouldInsuranceLinkBeActive(currentPageId)}
-                  insurancePurchasingLinkIsActive={this.shouldInsurancePurchasingLinkBeActive(currentPageId)}
+                  directPaymentUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_DIRECT_PAYMENT_PROCESS]}
+                  loginUrl={PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_LOGIN]}
+                  signUpUrl={PAGE_ID_TO_ROUTE[NOT_REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SIGN_UP]}
+                  personalCenterUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_PERSONAL_CENTER]}
                   directPaymentLinkIsActive={this.shouldDirectPaymentLinkBeActive(currentPageId)}
-                  personalCenterLinkIsActive={this.shouldPersonalCenterLinkBeActive(currentPageId)}>{children}</Root>
+                  personalCenterLinkIsActive={this.shouldPersonalCenterLinkBeActive(currentPageId)}
+                  queryMedicalRecordUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_QUERY_MEDICAL_RECORD]}
+                  submitMedicalRecordUrl={PAGE_ID_TO_ROUTE[REQUIRE_LOGIN_PAGE_ID.HOSPITAL_SUBMIT_MEDICAL_RECORD]}
+                  submitMedicalRecordLinkIsActive={this.shouldSubmitMedicalRecordBeActive(currentPageId)}
+                  queryMedicalRecordLinkIsActive={this.shouldQueryMedicalRecordBeActive(currentPageId)}>{children}</Root>
         );
     }
 }

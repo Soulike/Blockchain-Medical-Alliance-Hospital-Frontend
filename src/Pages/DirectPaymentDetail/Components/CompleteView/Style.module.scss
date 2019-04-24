@@ -1,0 +1,17 @@
+.CompleteView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: (100rem/24) 0;
+
+    .icon {
+        width: (50rem/24);
+        height: (50rem/24);
+        font-size: (50rem/24);
+    }
+
+    .text {
+        font-size: (28rem/24);
+        margin-left: (20rem/24);
+    }
+}

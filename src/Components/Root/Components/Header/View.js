@@ -10,17 +10,18 @@ class Header extends Component
     {
         const {
             hasLoggedIn,
-            insuranceUrl,
-            insurancePurchasingUrl,
             directPaymentUrl,
             personalCenterUrl,
             signUpUrl,
             loginUrl,
-            insuranceLinkIsActive,
-            insurancePurchasingLinkIsActive,
+            submitMedicalRecordUrl,
+            submitMedicalRecordLinkIsActive,
+            queryMedicalRecordUrl,
+            queryMedicalRecordLinkIsActive,
             directPaymentLinkIsActive,
             personalCenterLinkIsActive,
-        } = this.props;
+        }
+            = this.props;
         return (
             <div className={Style.Header}>
                 <div className={Style.logoWrapper}>
@@ -31,14 +32,14 @@ class Header extends Component
                 <div className={Style.rightWrapper}>
                     <nav className={Style.navWrapper}>
                         <Link onlyActiveOnIndex={false}
-                              className={`${Style.navItem} ${insuranceLinkIsActive ? Style.active : null}`}
-                              to={insuranceUrl}>保险</Link>
-                        <Link onlyActiveOnIndex={false}
-                              className={`${Style.navItem} ${insurancePurchasingLinkIsActive ? Style.active : null}`}
-                              to={insurancePurchasingUrl}>投保</Link>
-                        <Link onlyActiveOnIndex={false}
                               className={`${Style.navItem} ${directPaymentLinkIsActive ? Style.active : null}`}
                               to={directPaymentUrl}>直付</Link>
+                        <Link onlyActiveOnIndex={false}
+                              className={`${Style.navItem} ${submitMedicalRecordLinkIsActive ? Style.active : null}`}
+                              to={submitMedicalRecordUrl}>提交病历</Link>
+                        <Link onlyActiveOnIndex={false}
+                              className={`${Style.navItem} ${queryMedicalRecordLinkIsActive ? Style.active : null}`}
+                              to={queryMedicalRecordUrl}>查询病历</Link>
                     </nav>
                     <div className={Style.authControllerWrapper}>
                         {
@@ -66,14 +67,14 @@ class Header extends Component
 
 Header.propTypes = {
     hasLoggedIn: PropTypes.bool.isRequired,
-    insuranceUrl: PropTypes.string.isRequired,
-    insurancePurchasingUrl: PropTypes.string.isRequired,
     directPaymentUrl: PropTypes.string.isRequired,
     personalCenterUrl: PropTypes.string.isRequired,
     signUpUrl: PropTypes.string.isRequired,
     loginUrl: PropTypes.string.isRequired,
-    insuranceLinkIsActive: PropTypes.bool.isRequired,
-    insurancePurchasingLinkIsActive: PropTypes.bool.isRequired,
+    submitMedicalRecordUrl: PropTypes.string.isRequired,
+    submitMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
+    queryMedicalRecordUrl: PropTypes.string.isRequired,
+    queryMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
     directPaymentLinkIsActive: PropTypes.bool.isRequired,
     personalCenterLinkIsActive: PropTypes.bool.isRequired,
 };

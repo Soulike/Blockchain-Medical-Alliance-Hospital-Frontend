@@ -11,14 +11,14 @@ class Root extends Component
         const {
             children,
             hasLoggedIn,
-            insuranceUrl,
-            insurancePurchasingUrl,
             directPaymentUrl,
             personalCenterUrl,
             signUpUrl,
             loginUrl,
-            insuranceLinkIsActive,
-            insurancePurchasingLinkIsActive,
+            submitMedicalRecordUrl,
+            submitMedicalRecordLinkIsActive,
+            queryMedicalRecordUrl,
+            queryMedicalRecordLinkIsActive,
             directPaymentLinkIsActive,
             personalCenterLinkIsActive,
         } = this.props;
@@ -27,14 +27,14 @@ class Root extends Component
                 <header className={Style.headerWrapper}>
                     <Header {...{
                         hasLoggedIn,
-                        insuranceUrl,
-                        insurancePurchasingUrl,
                         directPaymentUrl,
                         personalCenterUrl,
                         signUpUrl,
                         loginUrl,
-                        insuranceLinkIsActive,
-                        insurancePurchasingLinkIsActive,
+                        submitMedicalRecordUrl,
+                        submitMedicalRecordLinkIsActive,
+                        queryMedicalRecordUrl,
+                        queryMedicalRecordLinkIsActive,
                         directPaymentLinkIsActive,
                         personalCenterLinkIsActive,
                     }} />
@@ -52,14 +52,14 @@ class Root extends Component
 
 Root.propTypes = {
     hasLoggedIn: PropTypes.bool.isRequired,
-    insuranceUrl: PropTypes.string.isRequired,
-    insurancePurchasingUrl: PropTypes.string.isRequired,
     directPaymentUrl: PropTypes.string.isRequired,
     personalCenterUrl: PropTypes.string.isRequired,
     signUpUrl: PropTypes.string.isRequired,
     loginUrl: PropTypes.string.isRequired,
-    insuranceLinkIsActive: PropTypes.bool.isRequired,
-    insurancePurchasingLinkIsActive: PropTypes.bool.isRequired,
+    submitMedicalRecordUrl: PropTypes.string.isRequired,
+    submitMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
+    queryMedicalRecordUrl: PropTypes.string.isRequired,
+    queryMedicalRecordLinkIsActive: PropTypes.bool.isRequired,
     directPaymentLinkIsActive: PropTypes.bool.isRequired,
     personalCenterLinkIsActive: PropTypes.bool.isRequired,
 };
